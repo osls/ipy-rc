@@ -193,6 +193,8 @@ def datetime_str():
 
 print()
 print(datetime_str())
+dt=time.localtime()
+print(dt.tm_year, (dt.tm_yday-1)//30+1, (dt.tm_yday-1)%30+1)
 
 
 # ... ... ....
