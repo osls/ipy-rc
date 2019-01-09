@@ -44,7 +44,7 @@ from mpl_toolkits.mplot3d import Axes3D
 # importlib.import_module('mpl_toolkits.mplot3d').Axes3D
 from matplotlib import pylab, mlab, pyplot
 import seaborn
-sb = seaborn
+sns = seaborn
 ss, la = stats, linalg
 plt, plb = pyplot, pylab
 
