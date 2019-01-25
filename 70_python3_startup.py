@@ -116,7 +116,10 @@ mul = multiprocessing
 true = True
 false = False
 
+def done(s=''):
+    print(s, 'Done!')
 
+    
 def execfile(filename, globals=None, locals=None):
     'Noam@stackoverflow[436198]an-alternative-to-execfile-in-python-3'
     if globals is None:
