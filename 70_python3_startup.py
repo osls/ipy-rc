@@ -116,18 +116,26 @@ mul = multiprocessing
 true = True
 false = False
 
+
 def done(s=''):
     print(s, 'Done!')
+
+
+def datetime_str():
+    return strftime("%Y-%m-%d %H:%M:%S %A")  #%w
+    # strftime("%Y-%m-%d %H:%M:%S", localtime())
 
     
 def execfile(filename, globals=None, locals=None):
     'Noam@stackoverflow[436198]an-alternative-to-execfile-in-python-3'
+    print(datetime_str())
     if globals is None:
         globals = sys._getframe(1).f_globals
     if locals is None:
         locals = sys._getframe(1).f_locals
     code = compile(open(filename, 'rb').read(), filename, 'exec')
     exec(code, globals, locals)
+    print(datetime_str())
 
 
 def get_extremum(xlist):
@@ -190,9 +198,6 @@ if __name__ == "__main__":
     print(app_sc)
 """
 
-def datetime_str():
-    return strftime("%Y-%m-%d %H:%M:%S %A")  #%w
-    # strftime("%Y-%m-%d %H:%M:%S", localtime())
 
 print()
 print(datetime_str())
