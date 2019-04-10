@@ -520,7 +520,7 @@ def fplot(formula, xmms=[-5,5]): # mms is min, max [and steps]
 
 def jittering(lls, randScale=0.01, sampleNum=3):  # a simple jittering function
     # http://matplotlib.1069221.n5.nabble.com/jitter-in-matplotlib-td12573.html
-    return stats.norm.rvs(loc=lls, scale=randScale, size=(sampleNum, len(lls)))
+    return scipy.stats.norm.rvs(loc=lls, scale=randScale, size=(sampleNum, len(lls)))
 
 '''
 xs,ys = np.random.random((2,5))
