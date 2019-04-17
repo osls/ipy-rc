@@ -160,7 +160,8 @@ def do_1hot_encoding(dt, features, replace=True):
             dummies = pd.get_dummies(dt[feature], prefix=feature)
             #---
             if replace:
-                dt = pd.concat([dt, dummies], axis=1).drop(feature, inplace=True, axis=1)
+                dt = pd.concat([dt, dummies], axis=1)
+                dt.drop(feature, inplace=True, axis=1)
             else:
                 dt = pd.concat([dt, dummies], axis=1)
     return dt
@@ -728,7 +729,6 @@ The above matrix m gives coefficients of (x, y)
 (1, 0) (1, 1) (1, 2) (1, 3)
 (2, 0) (2, 1) (2, 2) (2, 3)
 (3, 0) (3, 1) (3, 2) (3, 3)
-
 
 tmp = polyval2d(a[:,0], a[:,1], m) # compute the fitting vals at each point
 
