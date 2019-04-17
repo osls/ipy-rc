@@ -158,13 +158,10 @@ def do_1hot_encoding(dt, features, replace=True):
     for feature in features:
         if feature in dt.columns:
             dummies = pd.get_dummies(dt[feature], prefix=feature)
-            #---
-            if replace:
-                dt = pd.concat([dt, dummies], axis=1)
-                dt.drop(feature, inplace=True, axis=1)
-            else:
-                dt = pd.concat([dt, dummies], axis=1)
+            dt = pd.concat([dt, dummies], axis=1)
+            if replace: dt.drop(feature, inplace=True, axis=1)
     return dt
+
 
 """
 def spark_app_eg():
@@ -714,7 +711,6 @@ def polyval2d(x, y, m):
 
 '''
 a=array([ [i, j, i**2+(100-j)**2]  for i in range(100)  for j in range(100) ])
-
 m = polyfit2d(a[:,0], a[:,1], a[:,2], [3,3]) # fits it!
 
 m is :
@@ -722,7 +718,6 @@ array([[  1.00000033e+04,  -2.00000024e+02,   9.99998625e-01,  1.18931529e-08],
        [ -4.10125405e-05,  -1.30057323e-06,   5.62423528e-08, -3.80531578e-10],
        [  9.99998620e-01,   5.63967447e-08,  -6.96189863e-10,  3.22986082e-12],
        [  1.18394489e-08,  -3.79559266e-10,   3.20454774e-12, -2.84217094e-14]])
-
 
 The above matrix m gives coefficients of (x, y)
 (0, 0) (0, 1) (0, 2) (0, 3)
