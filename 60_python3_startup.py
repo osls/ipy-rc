@@ -197,10 +197,17 @@ if __name__ == "__main__":
 """
 
 
+def nowa_days():
+    today = datetime_str()
+    d1 = datetime.datetime(          1979,               4,               25)
+    d2 = datetime.datetime(int(today[:4]), int(today[5:7]), int(today[8:10]))
+    interval = d2 - d1
+    return interval.days
+
 print()
 print(datetime_str())
 dt=time.localtime()
-print(dt.tm_year-2020, (dt.tm_yday-1)//30+1, (dt.tm_yday-1)%30+1)
+print(nowa_days(), '\t', dt.tm_year-2020, (dt.tm_yday-1)//30+1, (dt.tm_yday-1)%30+1)
 
 
 # ... ... ....
