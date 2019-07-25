@@ -117,8 +117,11 @@ true = True
 false = False
 
 
+def todo(s=''):
+    print(datetime_str()[:20], ': ', s, ' : ', 'TODO!')
+    
 def done(s=''):
-    print(s, 'Done!')
+    print(datetime_str()[:20], ': ', s, ' : ', 'Done!')
 
 
 def datetime_str():
