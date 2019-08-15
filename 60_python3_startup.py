@@ -544,6 +544,7 @@ plt.show()
 def enum(x): # a shoter enumerate
     return enumerate(x)
 
+lmap = lambda func, *iterable: [*map(func, *iterable)]
 
 def rlen(x):
     return range(len(x))
